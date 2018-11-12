@@ -1,55 +1,39 @@
 import React, { Component } from "react";
-import "./App.css";
-import axios from "axios";
-var NumberFormat = require("react-number-format");
+import CryptoCard from "./components/crypto-card";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            cryptos: []
-        };
-    }
-
-    componentDidMount() {
-        axios
-            .get(
-                "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,VEN,PRL,SUB,DASH&tsyms=USD,BTC"
-            )
-
-            .then(res => {
-                const cryptos = res.data;
-                console.log(cryptos);
-                this.setState({ cryptos: cryptos });
-            });
-    }
+    state = {
+        coinData: [
+            {
+                id: 1,
+                name: "Bitcoin",
+                symbol: "BTC"
+            },
+            {
+                id: 2,
+                name: "Ethereum",
+                symbol: "ETH"
+                // image: "/btc.png"
+            },
+            {
+                id: 3,
+                name: "Litecoin",
+                symbol: "LTC"
+                // image: "/btc.png"
+            }
+        ]
+    };
 
     render() {
         return (
-            <div className="App">
-                <div id="crypto-title" class="rounded">
-                    <h4>Top Cryptos</h4>
-                </div>
-
-                {Object.keys(this.state.cryptos).map(key => (
-                    <div
-                        key={key.toString()}
-                        id="crypto-container"
-                        className="rounded"
-                    >
-                        <span className="left badge badge-pill badge-primary">
-                            {key}
-                        </span>
-                        <span className="right badge badge-pill badge-primary">
-                            <NumberFormat
-                                value={this.state.cryptos[key].USD}
-                                displayType={"text"}
-                                thousandSeparator={true}
-                                prefix={"$"}
-                            />
-                        </span>
-                    </div>
+            <div>
+                {this.state.coinData.map(coin => (
+                    <CryptoCard
+                        key={coin.id}
+                        name={coin.name}
+                        symbol={coin.symbol}
+                        logo={coin.image}
+                    />
                 ))}
             </div>
         );

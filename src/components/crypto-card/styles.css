@@ -1,0 +1,83 @@
+.card {
+    width: 250px;
+    height: 100px;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.card.gain {
+    border: 1px solid #00b518;
+}
+
+.card.loss {
+    border: 1px solid #e60000;
+}
+
+.top,
+.bottom {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.card .name {
+    padding: 8px 12px;
+    font-weight: bold;
+    width: 60%;
+}
+
+.card .name span {
+    margin: 0px 0px 0px 4px;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+.card .percentage {
+    font-size: 0.9em;
+    width: 40%;
+    margin: 8px;
+    text-align: right;
+}
+
+.card .logo {
+    width: 30%;
+    text-align: center;
+    margin: 5px;
+}
+
+.card .price {
+    width: 70%;
+    margin: 8px 0;
+    font-size: 1.4em;
+}
+
+.card .percentage.gain,
+.card .price.gain {
+    color: #00b518;
+}
+
+.card .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: relative;
+}
+
+.card .price.gain .triangle {
+    top: -17px;
+    left: 8px;
+    border-width: 0 5px 8.7px 5px;
+    border-color: transparent transparent #00b518 transparent;
+}
+
+.card .price.loss .triangle {
+    top: 17px;
+    left: 8px;
+    border-width: 8.7px 5px 0 5px;
+    border-color: #e60000 transparent transparent transparent;
+}
+
+.card .percentage.loss,
+.card .price.loss {
+    color: #e60000;
+}
