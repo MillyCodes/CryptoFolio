@@ -8,14 +8,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-#container {
-    background: #fff;
-    width: 70%;
-    margin: 0 auto 4px auto;
-    padding: 1em;
-    box-shadow: 1px 1px 0 lightgray;
-}
-
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;

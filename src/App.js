@@ -28,10 +28,20 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <div id="crypto-title" class="rounded">
+                    <h4>Top Cryptos</h4>
+                </div>
+
                 {Object.keys(this.state.cryptos).map(key => (
-                    <div key={key.toString()} id="crypto-container">
-                        <span className="left">{key}</span>
-                        <span className="right">
+                    <div
+                        key={key.toString()}
+                        id="crypto-container"
+                        className="rounded"
+                    >
+                        <span className="left badge badge-pill badge-primary">
+                            {key}
+                        </span>
+                        <span className="right badge badge-pill badge-primary">
                             <NumberFormat
                                 value={this.state.cryptos[key].USD}
                                 displayType={"text"}

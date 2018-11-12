@@ -1,12 +1,20 @@
 body {
     background: #f1f1f1;
-    padding: 50px;
+    padding: 0px;
 }
 
 div#crypto-container {
     background: #fff;
-    width: 70%;
-    margin: 0 auto 4px auto;
+    width: 60%;
+    margin: 2px auto 4px auto;
+    padding: 1em;
+    box-shadow: 1px 1px 0 lightgray;
+}
+
+div#crypto-title {
+    background: #fff;
+    width: 60%;
+    margin: 2px auto 4px auto;
     padding: 1em;
     box-shadow: 1px 1px 0 lightgray;
 }
