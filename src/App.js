@@ -5,18 +5,15 @@ class App extends Component {
     state = {
         coinData: [
             {
-                id: 1,
                 name: "Bitcoin",
                 symbol: "BTC"
             },
             {
-                id: 2,
                 name: "Ethereum",
                 symbol: "ETH"
                 // image: "/btc.png"
             },
             {
-                id: 3,
                 name: "Litecoin",
                 symbol: "LTC"
                 // image: "/btc.png"
@@ -29,7 +26,7 @@ class App extends Component {
             <div>
                 {this.state.coinData.map(coin => (
                     <CryptoCard
-                        key={coin.id}
+                        key={coin.name}
                         name={coin.name}
                         symbol={coin.symbol}
                         logo={coin.image}
